@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dilan TECH | Tienda de Tecnología</title>
+    <!-- Iconos de FontAwesome para botones y redes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Fuente Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- NAVEGACIÓN -->
+    <header class="navbar">
+        <div class="logo">Dilan <span>TECH</span></div>
+        <nav class="nav-links" id="navLinks">
+            <a href="#inicio">Inicio</a>
+            <a href="#productos">Productos</a>
+            <a href="#beneficios">Beneficios</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+        <div class="nav-actions">
+            <button class="cart-btn" id="openCartBtn">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count" id="cartCount">0</span>
+            </button>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- HERO / PORTADA PRINCIPAL -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <span class="badge">Nueva Colección 2026</span>
+            <h1>Potencia tu mundo con la mejor <span>Tecnología</span></h1>
+            <p>En <strong>Dilan TECH</strong> descubre gadgets, laptops y accesorios diseñados para llevar tu productividad y entretenimiento al siguiente nivel.</p>
+            <div class="hero-buttons">
+                <a href="#productos" class="btn-primary">Explorar Catálogo</a>
+                <a href="#beneficios" class="btn-secondary">Conocer más</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&w=800&q=80" alt="Setup Tecnológico Dilan TECH">
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE PRODUCTOS -->
+    <section id="productos" class="products-section">
+        <div class="section-header">
+            <h2>Nuestros Productos Destacados</h2>
+            <p>Selecciona tus favoritos y agrégalos al carrito de compras</p>
+        </div>
+
+        <!-- Filtros con JavaScript -->
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="audio">Audio</button>
+            <button class="filter-btn" data-filter="laptops">Laptops</button>
+            <button class="filter-btn" data-filter="accesorios">Accesorios</button>
+        </div>
+
+        <div class="products-grid" id="productsGrid">
+            <!-- Producto 1 -->
+            <div class="product-card" data-category="audio">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80" alt="Audífonos Pro">
+                    <span class="tag">-15%</span>
+                </div>
+                <div class="product-info">
+                    <h3>Audífonos Studio ANC</h3>
+                    <p class="desc">Cancelación activa de ruido y 40h de batería.</p>
+                    <div class="price-row">
+                        <span class="price">S/ 349.00</span>
+                        <button class="btn-add" onclick="agregarAlCarrito('Audífonos Studio ANC', 349)">
+                            <i class="fas fa-plus"></i> Agregar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="product-card" data-category="laptops">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=600&q=80" alt="Ultrabook X1">
+                </div>
+                <div class="product-info">
+                    <h3>Ultrabook Pro 15"</h3>
+                    <p class="desc">Procesador última generación, 16GB RAM, SSD 1TB.</p>
+                    <div class="price-row">
+                        <span class="price">S/ 4,299.00</span>
+                        <button class="btn-add" onclick="agregarAlCarrito('Ultrabook Pro 15', 4299)">
+                            <i class="fas fa-plus"></i> Agregar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="product-card" data-category="accesorios">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=80" alt="Smartwatch Fit">
+                    <span class="tag">Nuevo</span>
+                </div>
+                <div class="product-info">
+                    <h3>Smartwatch Pulse V2</h3>
+                    <p class="desc">Monitor cardíaco, GPS integrado y sumergible.</p>
+                    <div class="price-row">
+                        <span class="price">S/ 480.00</span>
+                        <button class="btn-add" onclick="agregarAlCarrito('Smartwatch Pulse V2', 480)">
+                            <i class="fas fa-plus"></i> Agregar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 4 -->
+            <div class="product-card" data-category="accesorios">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=600&q=80" alt="Teclado Mecánico">
+                </div>
+                <div class="product-info">
+                    <h3>Teclado Mecánico RGB</h3>
+                    <p class="desc">Switches táctiles silenciosos y chasis de aluminio.</p>
+                    <div class="price-row">
+                        <span class="price">S/ 260.00</span>
+                        <button class="btn-add" onclick="agregarAlCarrito('Teclado Mecánico RGB', 260)">
+                            <i class="fas fa-plus"></i> Agregar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BENEFICIOS -->
+    <section id="beneficios" class="benefits">
+        <div class="benefit-box">
+            <i class="fas fa-shipping-fast"></i>
+            <h3>Envío Express</h3>
+            <p>Entregas en 24 horas a todo Lima Metropolitana.</p>
+        </div>
+        <div class="benefit-box">
+            <i class="fas fa-shield-alt"></i>
+            <h3>Garantía Oficial</h3>
+            <p>12 meses de garantía directa en todos nuestros equipos.</p>
+        </div>
+        <div class="benefit-box">
+            <i class="fas fa-headset"></i>
+            <h3>Soporte 24/7</h3>
+            <p>Asesoría personalizada antes y después de tu compra.</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contacto">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>Dilan <span>TECH</span></h3>
+                <p>Tu tienda de confianza en innovación y tecnología. Proyecto Académico Diseño Web - UCH.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#productos">Catálogo</a></li>
+                    <li><a href="#beneficios">Garantía</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Síguenos</h4>
+                <div class="socials">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Dilan TECH Perú - Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- MODAL CARRITO DE COMPRAS -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3>Tu Carrito - Dilan TECH</h3>
+                <button id="closeCartBtn"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <p class="empty-msg">Tu carrito está vacío.</p>
+            </div>
+            <div class="cart-footer">
+                <div class="total">Total: <span id="cartTotal">S/ 0.00</span></div>
+                <button class="btn-checkout" onclick="finalizarCompra()">Finalizar Compra</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- BOTÓN FLOTANTE DE INFORMACIÓN -->
+    <div class="floating-widget">
+        <div class="info-popup" id="infoPopup">
+            <div class="popup-header">
+                <h4><i class="fas fa-info-circle"></i> Centro de Ayuda</h4>
+                <button id="closePopupBtn">&times;</button>
+            </div>
+            <div class="popup-body">
+                <p>¡Hola! 👋 Bienvenido a <strong>Dilan TECH</strong>.</p>
+                <ul>
+                    <li><strong>Horario:</strong> Lun - Sáb (9am - 8pm)</li>
+                    <li><strong>Envíos:</strong> Gratis por compras mayores a S/ 300.</li>
+                    <li><strong>Pagos:</strong> Yape, Plin y Tarjetas.</li>
+                </ul>
+                <a href="https://wa.me/51999999999" target="_blank" class="btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
+                </a>
+            </div>
+        </div>
+        <button class="floating-btn" id="floatingInfoBtn" title="Información y Ayuda">
+            <i class="fas fa-comment-dots"></i>
+            <span>¿Necesitas ayuda?</span>
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
